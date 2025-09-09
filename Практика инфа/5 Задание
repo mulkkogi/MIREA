@@ -1,0 +1,17 @@
+#include <iostream>
+int main() 
+{
+    unsigned long n;
+    unsigned long h ;
+    unsigned long mm;
+    unsigned long ss;
+    std::cin >> n;
+    h = n /3600 %24;
+    mm = n/60%60;
+    ss = n%60;
+    std::cout << h << ":";  
+    if (mm <10) std::cout << "0" ;
+    std::cout << mm << ":";
+    if (ss<10)std::cout <<"0" ;
+    std::cout << ss;
+}

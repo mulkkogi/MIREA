@@ -1,0 +1,8 @@
+#include <iostream>
+int main() 
+{
+    unsigned long v,t;
+    unsigned long s =109;
+    std::cin >> v >>t ;
+    std::cout << (v*t)%s;
+}
