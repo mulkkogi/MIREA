@@ -1,0 +1,31 @@
+#include <cstdint>
+#include <iostream>
+
+int main() {
+    int a, b;
+    char operation;
+    std::cin >> a >> operation >> b;
+
+    int result;
+    switch (operation) {
+        case '+':
+            result = a + b;
+            break;
+        case '-':
+            result = a - b;
+            break;
+        case '*':
+            result = a * b;
+            break;
+        case '/':
+            result = a / b;
+            break;
+        case '%':
+            result = a % b;
+            break;
+        default:
+            result = 0;
+    }
+
+    std::cout << result << "\n";
+}
