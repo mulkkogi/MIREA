@@ -1,0 +1,23 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+int main () {
+    srand (time(0));
+    int size;
+    int sum;
+    cout <<"size of the array?/n";
+    cin >> size;
+    vector<int>array;
+    for (int i=0;i<size;i++) {
+        array.push_back(rand() %100);
+        cout<<array[i]<<" ";
+        sum +=array[i];
+    }
+    cout << endl;
+    average =sum /size;
+    cout<<"average:"<<average<<endl;
+    
+    delete array;
+    return 0;
+}
