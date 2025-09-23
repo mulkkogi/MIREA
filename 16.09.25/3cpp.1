@@ -1,0 +1,16 @@
+#include <iostream>
+int main() 
+{
+    int z = 1;
+    double x,y;
+    std::cout << "How much money did Ivan Ivanovich launder on the first day?\n";
+    std::cin >> x;
+    std::cout << "What amount would the FTS be interested in?\n";
+    std::cin >> y;
+    while (x<=y)
+    {
+        x = x+x*0.1;
+        ++z;
+    }
+    std::cout << z;
+}
