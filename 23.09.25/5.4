@@ -1,0 +1,28 @@
+#include <iostream>  
+#include <cstdlib>  
+#include <ctime> 
+int main() { 
+    std::srand(time(0));
+    int l;
+    int nc;  
+    std::cout << "Number of lines:";  
+    std::cin >> l;  
+    std::cout << "Number of columns:";  
+    std::cin >> c;  
+    int** array = new int*[l];  
+    for(int i = 0; i < l; i++) {  
+        array[i] = new int[c];  
+    }  
+    for(int i = 0; i < l; i++) {  
+        for(int j = 0; j < c; j++) {  
+            array[i][j] = rand() % 100;  
+        }  
+    } 
+    std::cout << "Array:\n";  
+    for(int i = 0; i < l; i++) {  
+        for(int j = 0; j < c; j++) {  
+            std::cout << array[i][j] << "\t";  
+        }  
+        std::cout << std::endl;  
+    }   
+} 

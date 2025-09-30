@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+int main() {
+    int num;
+    int c = 0;
+    std::cout << "Number of students: ";
+    std::cin >> num;
+    std::cout << num << " numbers: ";
+    std::vector<int> stack;
+    for (int i = 0; i < num; i++) {
+        int x;
+        std::cin >> x;
+        if (!stack.empty() && stack.back() == x) {
+            stack.pop_back();
+            yc+= 2;
+        }
+        else {
+            stack.push_back(x);
+        }
+    }std::cout << "Students who went to KFC: " << c << "\n";
+}
