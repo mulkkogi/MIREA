@@ -1,0 +1,21 @@
+#include <iostream>  
+using namespace std;  
+
+int countCharacters(const char* str) {  
+    int count = 0;    
+    while (str[count] != '\0') {  
+        count++;  
+    }  
+      
+    return count;  
+}  
+  
+int main() {  
+    const char* test1 = "Kirik i Agatik!";   
+    const char* test4 = "";
+      
+    cout << "len str \"" << test1 << "\": " << countCharacters(test1) << endl;   
+    cout << "len empty str: " << countCharacters(test4) << endl;
+      
+    return 0;  
+}

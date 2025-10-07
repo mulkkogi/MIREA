@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    int frnd;
+    cout<<"Type number of friends:";
+    cin >> frnd;
+
+    vector<int> num1, num2, num3;
+    for (int i = 0; i < frnd; i++) {
+        string surname, name;
+        int n1, n2, n3;
+        cout<<"Type their name and three criteria scores:";
+        cin >> surname >> name >> n1 >> n2 >> n3;
+
+        num1.push_back(n1);
+        num2.push_back(n2);
+        num3.push_back(n3);
+    }
+
+    double avg1 = 0, avg2 = 0, avg3 = 0;
+
+    for (int i = 0; i < frnd; i++) {
+        avg1 += num1[i];
+        avg2 += num2[i];
+        avg3 += num3[i];
+    }
+
+    avg1 /= frnd;
+    avg2 /= frnd;
+    avg3 /= frnd;
+
+    avg1 = round(avg1 * 10) / 10.0;
+    avg2 = round(avg2 * 10) / 10.0;
+    avg3 = round(avg3 * 10) / 10.0;
+
+    cout << avg1 << " " << avg2 << " " << avg3 << endl;
+
+}

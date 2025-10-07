@@ -1,0 +1,31 @@
+#include <iostream>    
+using namespace std;
+char toLowerCase(char ch) {
+    if (ch>= 'A' & ch <='Z') {
+        return ch + ( 'a' - 'A');
+    }
+    return ch;
+}
+bool compareStr(const string& str1, const string& str2) {    
+    if (str1.length() != str2.length()) {  
+        return false;  
+    }   
+    for (size_t i = 0; i < str1.length(); ++i) {  
+        if (toLowerCase(str1[i]) != toLowerCase(str2[i])) {  
+            return false;  
+        }  
+    }  
+      
+    return true;  
+}  
+  
+int main() {   
+    string s1 = "Kira";  
+    string s2 = "Agatik";  
+    string s3 = "KIRA";  
+      
+    cout << boolalpha;  
+      
+    cout << "compare s1 and s2: " << compareStr(s1, s2) << endl;  
+    cout << "compare s1 and s3: " << compareStr(s1, s3) << endl;   
+}

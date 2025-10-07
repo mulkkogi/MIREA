@@ -1,0 +1,13 @@
+#include <iostream>  
+int main() {    
+    long long n;  
+    std::cout << "Type the number : ";  
+    std::cin >> n;   
+    double* ptr = new double;  
+    *ptr = static_cast<double>(n);   
+    double** ptr_to_ptr = new double*;  
+    *ptr_to_ptr = ptr;  
+    std::cout << "Meaning: " << **ptr_to_ptr << std::endl;  
+    delete ptr_to_ptr;  
+    delete ptr;  
+}
