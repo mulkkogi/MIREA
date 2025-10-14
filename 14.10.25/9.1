@@ -1,0 +1,28 @@
+#include <iostream>  
+#include <vector>  
+#include <unordered_set> 
+void removeDuplicates(const std::vector<int>& input, std::vector<int>& result) {    
+    std::unordered_set<int> seen;  
+    for (int n : input) {  
+        if (seen.find(n) == seen.end()) {  
+            result.push_back(n);  
+            seen.insert(n);  
+        }  
+    }  
+}   
+void printArray(const std::vector<int>& arr) {  
+    for (int n : arr) {  
+        std::cout << n << " ";  
+    }  
+    std::cout << std::endl;  
+}  
+  
+int main() { 
+    std::vector<int> input = {8, 4, 6, 8, 4, 7};  
+    std::vector<int> result;  
+    removeDuplicates(input, result);
+    std::cout << "Array: ";  
+    printArray(input);  
+    std::cout << "Array without duplicates: ";  
+    printArray(result);  
+}

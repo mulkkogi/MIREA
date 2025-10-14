@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "rus");
+    int a ;
+    int n ;
+    cout<<"Type a and n:";
+    cin>>a>>n;
+
+    int out = a;
+
+    for (int i = 1; i < n; i++)
+    {
+        out = out * a;
+    }
+    cout <<"answer: " << out << endl;
+    system("pause");
+}

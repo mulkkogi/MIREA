@@ -1,0 +1,18 @@
+#include <iostream>
+template <typename T>
+
+T myMin(const T& a, const T& b) {
+    if (a<b) {
+        return a;
+    }
+    else {
+        return b;
+    }
+}
+int main() {
+    int a;
+    int b;
+    std::cout << "Type a,b:";
+    std::cin>> a>>b;
+    std::cout<<myMin(a,b);
+}

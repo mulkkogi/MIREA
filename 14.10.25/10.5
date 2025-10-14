@@ -1,0 +1,16 @@
+#include <iostream>
+template <typename T>
+    T contains(const T* array, size_t size, const T& value) {   
+    for(size_t i = 0; i < size; ++i) {  
+        if(array[i] == value) {  
+            return true;
+        }  
+    }  
+    return false;
+}
+int main() {   
+int numbers[] = {1, 2, 3, 4, 5};  
+std::cout << contains(numbers, 5, 4) << std::endl;  
+      
+return 0;  
+}
