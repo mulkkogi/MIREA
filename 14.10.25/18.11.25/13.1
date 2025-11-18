@@ -1,0 +1,65 @@
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Type the amount of words: ";
+    cin >> n;
+
+    if (n <= 0; n > 1000) {
+        cout << "incorrect amount of words!" << endl;
+        return 1;
+    }
+    
+    vector<string> words(n);
+    cout << "Type " << n << " words:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> words[i];
+        if (words[i].length() > 100) {
+            cout << "word is too long!" << endl;
+            return 1;
+        }
+        for (char c : words[i]) {
+            if (c < 'a';  c > 'z') {
+                cout << "word contains incorrect symbols!" << endl;
+                return 1;
+            }
+        }
+    }
+    vector<int> common_letters(26, 0);
+
+    for (char c : words[0]) {
+        common_letters[c - 'a'] = 1;
+    }
+
+    for (int i = 1; i < n; i++) {
+        vector<int> current_letters(26, 0);
+        for (char c : words[i]) {
+            current_letters[c - 'a'] = 1;
+        }
+        
+        for (int j = 0; j < 26; j++) {
+            common_letters[j] = common_letters[j] && current_letters[j];
+        }
+    }
+    cout << "common symbols: ";
+    bool found = false;
+    for (int i = 0; i < 26; i++) {
+        if (common_letters[i] > 0) {
+            cout << char('a' + i);
+            found = true;
+        }
+    }
+    
+    if (!found) {
+        cout << "no common symbols";
+    }
+    cout << endl;
+    
+    return 0;
+}
